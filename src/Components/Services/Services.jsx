@@ -3,10 +3,8 @@ import mocktail from "../Images/mocktail.webp";
 import desert from "../Images/desert.webp";
 import maincourse from "../Images/maincourse.jpg";
 import "./Services.css";
-const change = {
-  desert: 0,
-  mocktail: 0,
-  maincourse: 0,
+const style = {
+  opacity: 0.5,
 };
 const Services = () => {
   const [img, setImg] = useState(maincourse);
@@ -15,10 +13,7 @@ const Services = () => {
     mocktail: 0,
     desert: 0,
   });
-  // const handleEnter = () => {
-  //   setImg();
-  // };
-  console.log(img);
+
   return (
     <>
       <div className="modern_restaurent-services_heading">
@@ -38,60 +33,68 @@ const Services = () => {
         className="modern_restaurent-services"
         style={{ backgroundImage: `url(${img})` }}
       >
-        <div
-          className="modern-restaurent_services_recipes"
-          // onMouseLeave={setOpacity({ change, maincourse: 1 })}
-        >
+        {/* <img src={img} alt="" className="image-transition" /> */}
+        <div className="modern-restaurent_services_recipes">
           <div
             className="modern_restaurent-services_item maincourse"
+            style={img === maincourse ? style : {}}
             onMouseOver={() => {
-              setOpacity({ change, maincourse: 1 });
+              // setOpacity({ change, maincourse: 1 });
+
               setImg(maincourse);
             }}
           >
-            <img
+            {/* <img
               src={maincourse}
               alt=""
               style={{ opacity: opacity.maincourse }}
-            />
-            <div className="text_changing">
+            /> */}
+            <div className="modern_restaurent-text_changing">
               <h3>Main Course</h3>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Quisquam, perferendis.
+                Our menu includes options such as grilled steak with a side of
+                roasted vegetables, creamy garlic butter shrimp pasta, tender
+                roasted chicken with mashed potatoes, and a flavorful vegetarian
+                stir-fry
               </p>
             </div>
           </div>
-          <hr />
+
           <div
             className="modern_restaurent-services_item mocktail"
+            style={img === mocktail ? style : {}}
             onMouseOver={() => {
-              setOpacity({ change, mocktail: 1 });
+              // setOpacity({ change, mocktail: 1 });
+
               setImg(mocktail);
             }}
           >
-            <img src={mocktail} alt="" style={{ opacity: opacity.mocktail }} />
-            <div className="text_changing">
+            {/* <img src={mocktail} alt="" style={{ opacity: opacity.mocktail }} /> */}
+            <div className="modern_restaurent-text_changing">
               <h3>Mocktail</h3>
               <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum,
-                deleniti.
+                A mocktail is a non-alcoholic cocktail typically made with fruit
+                juices, syrups, and other mixers, and can be just as delicious
+                as its alcoholic counterpart.
               </p>
             </div>
           </div>
           <div
             className="modern_restaurent-services_item desert"
+            style={img === desert ? style : {}}
             onMouseOver={() => {
-              setOpacity({ change, desert: 1 });
+              // setOpacity({ change, desert: 1 });
+
               setImg(desert);
             }}
           >
-            <img src={desert} alt="" style={{ opacity: opacity.desert }} />
-            <div className="text_changing">
+            {/* <img src={desert} alt="" style={{ opacity: opacity.desert }} /> */}
+            <div className="modern_restaurent-text_changing">
               <h3>Dessert</h3>
               <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Maiores, quo?
+                The scorching sun beats down on the endless dunes, a barren
+                landscape stretching out before you. The only sound is the
+                whisper of sand being carried by the hot desert wind.
               </p>
             </div>
           </div>
